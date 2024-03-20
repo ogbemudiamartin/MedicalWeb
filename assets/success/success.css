@@ -250,3 +250,101 @@ footer .container-f-end .list ul li:hover{
 }
 
 
+@media (max-width: 1024px){
+    section{
+        margin: 10rem 15rem;
+      }
+}
+@media (max-width: 824px){
+    header .header-container .header-list{
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        top:0;
+        left:0;
+        padding-top: 4rem;
+        background:rgb(245,245,245) ;
+       width:40%;
+       transform: translateX(-100%);
+       transition: ease 0s ;
+       z-index: 2;
+       
+    }
+    header .header-container .body{
+        position: absolute;
+        left:0;
+        top:0;
+        background-color: rgba(0,0,0,.6);
+        width: 100%;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: all 0.5s;
+       }
+    header .header-container  .active{
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        top:0;
+        left:0;
+        padding-top: 6rem;
+        background: #fff;
+       width:50%;
+       height: 100vh;
+       transform: translateX(0%);
+       transition: ease 0.5s;
+       gap: 2rem;
+       z-index: 7;
+    }
+    header .header-container  .active a{
+        font-size: 1.4rem;
+    }
+       header .header-container  .open{
+        position: fixed;
+        background-color: rgba(0,0,0,.6);
+        width: 100%;
+        height: 100vh;
+        transform: translateX(0%);
+        transition: all 0.5s;
+        z-index: 5;
+           }
+
+
+           
+    header .header-container i {
+      visibility: visible;
+      left: 19.5rem;
+      z-index: 6;
+    }
+
+
+
+    header .header-container .btn{
+        display: none;
+    }
+    section{
+        margin: 10rem 8rem;
+      }
+      footer .container-f-end{
+        padding: 3rem 1rem;
+        gap: 2rem;
+    }
+}
+@media (max-width: 430px){
+    section{
+        margin: 10rem 2rem;
+      }
+      footer .container-f-end{
+        flex-wrap: wrap;
+    }
+    header .header-container i {
+        left: 9.5rem;
+      }
+}
+@media (max-width: 375px){
+    header .header-container i {
+        left: 7.3rem;
+      }
+      
+}

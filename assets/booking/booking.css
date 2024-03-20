@@ -77,7 +77,6 @@ header .header-container {
     justify-content: space-between;
 }
 
-header .header-container img {}
 
 header .header-container .header-list {
     font-size: 1.2rem;
@@ -201,32 +200,28 @@ section .doc .doc-details .location .fa-location-dot {
     align-items: center;
     justify-content: center;
     border: 1px solid #adadad;
+    margin-bottom: 2rem;
 }
-.time .time_container .time_header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .7rem;
-    gap: 5rem;
-}
-.time .time_container .time_header .day{
+
+.time .time_container .time_head .day{
     text-align: center;
     text-transform: uppercase;
+    padding: .7rem;
 }
-.time .time_container .time_header .day:first-child{
+.time .time_container .time_head .day:first-child{
     font-weight: 500;
     color: black;
 
 }
-.time .time_container .time_header .day :last-child{
+.time .time_container .time_head .day :last-child{
     color: gray;
     font-weight: 400;
 }
 
 .time .time_container .time_body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns:
+    10rem 10rem 10rem 10rem 10rem 10rem 10rem ;
     padding: .5rem;
     gap: 1rem;
 }
@@ -273,9 +268,11 @@ footer .container-f-end{
     width: 100%;
     color: #fff;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding-top: 5rem;
     padding-right: 8rem;
+    padding-left: .3rem;
     padding-bottom: 8rem;
 }
 
@@ -314,3 +311,131 @@ footer .container-f-end .list ul li:hover{
 }
 
 
+@media (max-width:1024PX){
+    .time .time_container .time_body{
+        grid-template-columns:   10rem 10rem 10rem 10rem 10rem;
+
+    }
+    .time .time_container .time_header{
+        padding: 1rem;
+        gap: 2rem;
+    }
+}
+@media (max-width: 820PX){
+    .time .time_container .time_body{
+        grid-template-columns:   10rem 10rem 10rem 10rem;
+
+    }
+    .time .time_container .time_header{
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    
+    header .header-container .header-list{
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        top:0;
+        left:0;
+        padding-top: 4rem;
+        background:rgb(245,245,245) ;
+       width:40%;
+       transform: translateX(-100%);
+       transition: ease 0s ;
+       z-index: 2;
+       
+    }
+    header .header-container .body{
+        position: absolute;
+        left:0;
+        top:0;
+        background-color: rgba(0,0,0,.6);
+        width: 100%;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: all 0.5s;
+       }
+    header .header-container  .active{
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        top:0;
+        left:0;
+        padding-top: 6rem;
+        background: #fff;
+       width:50%;
+       height: 100vh;
+       transform: translateX(0%);
+       transition: ease 0.5s;
+       gap: 2rem;
+       z-index: 7;
+    }
+    header .header-container  .active a{
+        font-size: 1.4rem;
+    }
+       header .header-container  .open{
+        position: fixed;
+        background-color: rgba(0,0,0,.6);
+        width: 100%;
+        height: 100vh;
+        transform: translateX(0%);
+        transition: all 0.5s;
+        z-index: 5;
+           }
+
+
+           
+    header .header-container i {
+      visibility: visible;
+      left: 19.5rem;
+      z-index: 6;
+    }
+    section .doc img {
+        width: 13%;
+        border-radius: 5px;
+        padding-right: 1.1rem;
+    }
+
+
+    header .header-container .btn{
+        display: none;
+    }
+    footer .container-f-end{
+        padding: 3rem 1rem;
+        gap: 2rem;
+    }
+}
+@media (max-width: 430px){
+.time .time_container .time_body{
+    grid-template-columns:   10rem 10rem  ;
+}
+               
+header .header-container i {
+    visibility: visible;
+    left: 6rem;
+}
+section .doc img {
+    width: 27%;
+    border-radius: 5px;
+    padding-right: 1.1rem;
+}
+.w_details .header_details{
+    gap: 5px;
+}
+header .header-container i {
+    left: 8.2rem;
+    transition: ease-in-out 1s;
+}
+}
+
+@media (max-width: 375px){
+    .time .time_container .time_body{
+        grid-template-columns: 10rem;
+    }
+    .w_details .header_details .h1 {
+        font-size: .9rem;
+    }
+}
